@@ -9,6 +9,7 @@ if ($_GET["action"] == "lenomdelaction"){
 }
 */
 include "../config/database.php";
+include "../app/controllers/homeController.php";
 $success = false;
 $route = array(
     "../ressources/views/layouts/footer.php" => "hobbies",
