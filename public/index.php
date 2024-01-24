@@ -8,9 +8,9 @@ if ($_GET["action"] == "lenomdelaction"){
     include '../ressources/views/errors/404.php';
 }
 */
+include "../config/database.php";
 $success = false;
 $route = array(
-    "../ressources/views/errors/404.php" => "action",
     "../ressources/views/layouts/footer.php" => "hobbies",
 );
 $page = filter_input(INPUT_GET,"action", FILTER_SANITIZE_URL);
