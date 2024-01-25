@@ -35,3 +35,17 @@ flowchart TD
     G-->H(Display comment addTime)
     H-->I(END)
 ```
+```mermaid
+flowchart TD
+A[index.pjp] -->B{Si POST id exist &&  GET action == blog}
+B -->|True|C[include blogPostController]
+B -->|False| D[Normal fontController]
+C -->E[include include homeController.php]
+E-->F[success = false]
+F -->Ga{i< array.length ?}
+Ga -->|faux|G{$_post id == id i }
+G --> H[include in views id i .php]
+H -->I[success = true]
+I -->J[END]
+D-->J
+```

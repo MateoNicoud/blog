@@ -15,12 +15,16 @@ $route = array(
 );
 
 $page = filter_input(INPUT_GET,"action", FILTER_SANITIZE_URL);
+if(isset($_POST["id"])&& $page == "blog"){
+    include "blogPostController.php";
+} else {
 foreach ($route as  $key => $value) {
     if ($page == $value) {
         include $key;
         $success= true;
 
     }
+}
 if(empty($page)){
     $success = true;
     include "../app/controllers/homeController.php";
