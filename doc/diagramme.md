@@ -23,3 +23,12 @@ blogPostData.php-->>homeController.php: blogPosts
 homeController.php->>home.tpl.php: blogPosts
 home.tpl.php-->>User: display blogPosts
 ```
+# afficher un article
+```mermaid
+flowchart TD
+    A[START] -->B(Display tile)
+    B --> C(Display dateFrom)
+    C -->D(Display content)
+    D -->E(Display nickname)
+    E -->F(END)
+```
