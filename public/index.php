@@ -15,7 +15,9 @@ $route = array(
 );
 
 $page = filter_input(INPUT_GET,"action", FILTER_SANITIZE_URL);
-if(isset($_POST["id"])&& $page == "blog"){
+$gid = filter_input(INPUT_GET,"id", FILTER_SANITIZE_URL);
+
+if($page == "blogpost" &&  isset($gid)){
     include "blogPostController.php";
 } else {
 foreach ($route as  $key => $value) {

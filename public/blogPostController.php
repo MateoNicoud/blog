@@ -1,11 +1,12 @@
 <?php
-include "../app/controllers/homeController.php";
-$success=false;
-$page = filter_input(INPUT_POST,"id", FILTER_SANITIZE_URL);
-foreach ($id as  $value) {
-    if ($page == $value) {
-        include "../ressources/views/".$value.".php";
-        $success= true;
+include "../app/persistances/blogPostData.php";
+$id = idPost($connexion);
+for ($i =1; $i<=count($id);$i++) {
 
+    if($page == "blogpost" && $gid == $id[$i]["id"]){
+        echo "../ressources/views/".$id[$i]["id"].".php";
+
+        require "../ressources/views/".$id[$i]["id"].".php";
+        $success= true;
     }
 }
