@@ -9,11 +9,11 @@ if ($_GET["action"] == "lenomdelaction"){
 }
 */
 include "../config/database.php";
-include "../app/controllers/homeController.php";
 $success = false;
 $route = array(
     "../ressources/views/layouts/footer.php" => "hobbies",
 );
+
 $page = filter_input(INPUT_GET,"action", FILTER_SANITIZE_URL);
 foreach ($route as  $key => $value) {
     if ($page == $value) {
@@ -21,7 +21,10 @@ foreach ($route as  $key => $value) {
         $success= true;
 
     }
-
+if(empty($page)){
+    $success = true;
+    include "../app/controllers/homeController.php";
+}
 } if(!$success){
     include '../ressources/views/errors/404.php';
 }

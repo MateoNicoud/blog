@@ -1,8 +1,8 @@
 <?php
-define('USER',"NMateo");
-define('PASSWD',"monster97");
-define('SERVER',"localhost");
-define('BASE',"blog2");
+const USER = "NMateo";
+const PASSWD = "monster97";
+const SERVER = "localhost";
+const BASE = "blog2";
 $dsn="mysql:dbname=".BASE.";host=".SERVER;
 try{
     $connexion=new PDO($dsn,USER,PASSWD);
