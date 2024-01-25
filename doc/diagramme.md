@@ -30,5 +30,8 @@ flowchart TD
     B --> C(Display dateFrom)
     C -->D(Display content)
     D -->E(Display nickname)
-    E -->F(END)
+    E -->F(Display comment nickname)
+    F-->G(Display comment content)
+    G-->H(Display comment addTime)
+    H-->I(END)
 ```
