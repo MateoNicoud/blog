@@ -18,7 +18,7 @@ $page = filter_input(INPUT_GET,"action", FILTER_SANITIZE_URL);
 $gid = filter_input(INPUT_GET,"id", FILTER_SANITIZE_URL);
 
 if($page == "blogpost" &&  isset($gid)){
-    include "blogPostController.php";
+    include "../app/controllers/blogPostController.php";
 } else {
 foreach ($route as  $key => $value) {
     if ($page == $value) {
