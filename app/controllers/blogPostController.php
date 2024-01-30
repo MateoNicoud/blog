@@ -1,6 +1,12 @@
 <?php
 include "../app/persistances/blogPostData.php";
 
+$contentblogPost = blogPostById($connexion, $gid);
+$getCom = commentsByBlogPost($connexion, $gid);
+include '../ressources/views/blogPost.tpl.php';
+/*$commentary = comments($connexion);
+$id = idPost($connexion);
+
 echo "<h2>Post</h2>";
 /*
 for ($i =0; $i<count($id);$i++) {
@@ -19,7 +25,7 @@ for ($i =0; $i<count($id);$i++) {
         $success= true;
     }
 
-}*/
+}
 blogPostByld($page,$gid,$id);
 echo "<h2>comments</h2>";
 /*
@@ -33,5 +39,12 @@ for ($in = 0; $in<count($commentary);$in++) {
         echo $commentary[$in]["addTime"];
     }
 }
-*/
+
 commentsByBlogPost($commentary,$gid);
+if($page == "blogpost" && $gid == $id[$i]["id"]) {
+    include "../ressources/views/blogPost.tpl.php";
+
+} else {echo "error 404";}
+
+*/
+

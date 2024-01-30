@@ -9,6 +9,7 @@ if ($_GET["action"] == "lenomdelaction"){
 }
 */
 include "../config/database.php";
+
 $success = false;
 $route = array(
     "../ressources/views/layouts/footer.php" => "hobbies",
@@ -16,7 +17,8 @@ $route = array(
 
 $page = filter_input(INPUT_GET,"action", FILTER_SANITIZE_URL);
 $gid = filter_input(INPUT_GET,"id", FILTER_SANITIZE_URL);
-
+global $connexion;
+global $gid;
 if($page == "blogpost" &&  isset($gid)){
     include "../app/controllers/blogPostController.php";
 } else {
