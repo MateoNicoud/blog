@@ -12,7 +12,7 @@ include "../config/database.php";
 
 $success = false;
 $route = array(
-    "../ressources/views/layouts/footer.php" => "hobbies",
+    "../app/controllers/blogPostCreateController.php" => "blogPostCreate",
 );
 
 $page = filter_input(INPUT_GET,"action", FILTER_SANITIZE_URL);

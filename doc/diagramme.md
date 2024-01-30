@@ -22,6 +22,8 @@ PDOStatement-->>blogPostData.php: blogPosts
 blogPostData.php-->>homeController.php: blogPosts
 homeController.php->>home.tpl.php: blogPosts
 home.tpl.php-->>User: display blogPosts
+User->>blogPostCreateController: create post
+blogPostCreateController->>PDO:insert new post
 ```
 # afficher un article
 ```mermaid
