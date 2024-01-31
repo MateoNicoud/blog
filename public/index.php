@@ -17,6 +17,7 @@ $route = array(
 
 $page = filter_input(INPUT_GET,"action", FILTER_SANITIZE_URL);
 $gid = filter_input(INPUT_GET,"id", FILTER_SANITIZE_URL);
+//$page= ($page!=='') ? (array_key_exist($page, $route) ? $page : '404') : 'index';
 global $connexion;
 global $gid;
 if($page == "blogpost" &&  isset($gid)){
