@@ -13,7 +13,6 @@ include "../config/database.php";
 $success = false;
 $route = array(
     "../app/controllers/blogPostCreateController.php" => "blogPostCreate",
-    "../app/controllers/blogPostModifyController.php" => "blogPostUpdate"
 );
 
 $page = filter_input(INPUT_GET,"action", FILTER_SANITIZE_URL);
@@ -23,7 +22,10 @@ global $connexion;
 global $gid;
 if($page == "blogpost" &&  isset($gid)){
     include "../app/controllers/blogPostController.php";
-} else {
+} elseif($page == "blogPostUpdate" &&  isset($gid)){
+    include "../app/controllers/blogPostModifyController.php";
+    $success = true;
+}else{
 foreach ($route as  $key => $value) {
     if ($page == $value) {
         include $key;

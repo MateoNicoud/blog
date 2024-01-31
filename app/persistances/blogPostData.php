@@ -47,11 +47,11 @@ VALUES
 
 }
 
-function blogPostUpdate($connexion,$title,$content,$priority,$enterId) {
+function blogPostUpdate($connexion,$title,$content,$priority,$gid) {
 
     $statement5 = $connexion->query("UPDATE posts
 SET title = '$title', content = '$content', dateFrom = CURDATE(), dateUntil = CURDATE(), priority = $priority
-WHERE id = $enterId");
+WHERE id = $gid");
     return $statement5;
 }
 
