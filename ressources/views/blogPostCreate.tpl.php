@@ -1,4 +1,6 @@
 <form action="http://blog.local/index.php?action=blogPostCreate" method="post">
+    <h2>création post anonyme</h2>
+    <br>
     <label for="title">titre
         <input type="text" name="title">
     </label>
@@ -7,9 +9,6 @@
     </label>
     <label for="priority">note
         <input type="text" name="priority">
-    </label>
-    <label for="users_id">id
-        <input type="text" name="users_id">
     </label>
     <button type="submit">Submit</button>
 </form>

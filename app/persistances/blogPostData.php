@@ -34,12 +34,12 @@ WHERE $gid = comments.posts_id
     return $statement3->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function blogPostCreate($connexion,$title,$content,$priority,$users_id) {
+function blogPostCreate($connexion,$title,$content,$priority) {
 
     $statement4 = $connexion->query("INSERT INTO posts
 (title,content,dateFrom,dateUntil,priority,users_id)
 VALUES
-('$title','$content',CURDATE(),CURDATE(),$priority,$users_id);
+('$title','$content',CURDATE(),CURDATE(),$priority,1);
 ");
 
     return $statement4;
