@@ -25,7 +25,11 @@ if($page == "blogpost" &&  isset($gid)){
 } elseif($page == "blogPostUpdate" &&  isset($gid)){
     include "../app/controllers/blogPostModifyController.php";
     $success = true;
-}else{
+}elseif($page == "blogPostDelete" &&  isset($gid)){
+    include "../app/controllers/blogPostDeleteController.php";
+    $success = true;
+}
+else{
 foreach ($route as  $key => $value) {
     if ($page == $value) {
         include $key;

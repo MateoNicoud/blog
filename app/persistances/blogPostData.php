@@ -54,7 +54,11 @@ SET title = '$title', content = '$content', dateFrom = CURDATE(), dateUntil = CU
 WHERE id = $gid");
     return $statement5;
 }
+function blogPostDelete($connexion,$gid){
+    $statement6 = $connexion->query("DELETE FROM posts WHERE ID = $gid;");
+    return $statement6;
 
+}
 /*function blogPostByld($page,$gid,$id): void
 {
     for ($i =0; $i<count($id);$i++) {
