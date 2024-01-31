@@ -17,6 +17,7 @@ $route = array(
 
 $page = filter_input(INPUT_GET,"action", FILTER_SANITIZE_URL);
 $gid = filter_input(INPUT_GET,"id", FILTER_SANITIZE_URL);
+$gName = filter_input(INPUT_GET,"name", FILTER_SANITIZE_URL);
 //$page= ($page!=='') ? (array_key_exist($page, $route) ? $page : '404') : 'index';
 global $connexion;
 global $gid;
@@ -27,6 +28,9 @@ if($page == "blogpost" &&  isset($gid)){
     $success = true;
 }elseif($page == "blogPostDelete" &&  isset($gid)){
     include "../app/controllers/blogPostDeleteController.php";
+    $success = true;
+}elseif($page == "blogPostCategory" &&  isset($gName)){
+    include "../app/controllers/blogPostByCategoryController.php";
     $success = true;
 }
 else{

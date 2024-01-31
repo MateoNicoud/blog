@@ -59,6 +59,15 @@ function blogPostDelete($connexion,$gid){
     return $statement6;
 
 }
+
+function blogPostsByCategory($connexion,$gName){
+    $statement7 = $connexion->query("SELECT * 
+FROM posts_categories
+INNER JOIN categories ON categories.idcat = posts_categories.categories_id
+INNER JOIN posts ON posts.id = posts_categories.posts_id 
+WHERE categories.name = '$gName'");
+    return $statement7->fetchAll();
+}
 /*function blogPostByld($page,$gid,$id): void
 {
     for ($i =0; $i<count($id);$i++) {
