@@ -13,6 +13,7 @@ include "../config/database.php";
 $success = false;
 $route = array(
     "../app/controllers/blogPostCreateController.php" => "blogPostCreate",
+    "../app/controllers/blogPostModifyController.php" => "blogPostUpdate"
 );
 
 $page = filter_input(INPUT_GET,"action", FILTER_SANITIZE_URL);

@@ -47,6 +47,14 @@ VALUES
 
 }
 
+function blogPostUpdate($connexion,$title,$content,$priority,$enterId) {
+
+    $statement5 = $connexion->query("UPDATE posts
+SET title = '$title', content = '$content', dateFrom = CURDATE(), dateUntil = CURDATE(), priority = $priority
+WHERE id = $enterId");
+    return $statement5;
+}
+
 /*function blogPostByld($page,$gid,$id): void
 {
     for ($i =0; $i<count($id);$i++) {

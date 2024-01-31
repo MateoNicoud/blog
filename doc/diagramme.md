@@ -22,7 +22,9 @@ PDOStatement-->>blogPostData.php: blogPosts
 blogPostData.php-->>homeController.php: blogPosts
 homeController.php->>home.tpl.php: blogPosts
 home.tpl.php-->>User: display blogPosts
-User->>blogPostCreateController: create post
+User->>blogPostCreateController: verification POST
+blogPostCreateController->>blogPostCreate.tpl.php:interface form
+blogPostCreate.tpl.php->>blogPostCreateController: create post
 blogPostCreateController->>PDO:insert new post
 ```
 # afficher un article
@@ -50,4 +52,24 @@ G --> H[include in views id i .php]
 H -->I[success = true]
 I -->J[END]
 D-->J
+```
+#modifier un posts
+```mermaid
+sequenceDiagram
+User->>index.php: ?action=
+index.php->>homeController.php: include
+homeController.php->>blogPostData.php: lastBlogPosts()
+blogPostData.php->>PDO: prepare()
+PDO-->>blogPostData.php: PDOStatement
+blogPostData.php->>PDOStatement: execute()
+PDOStatement-->>blogPostData.php: isSuccess
+blogPostData.php->>PDOStatement: fetchAll()
+PDOStatement-->>blogPostData.php: blogPosts
+blogPostData.php-->>homeController.php: blogPosts
+homeController.php->>home.tpl.php: blogPosts
+home.tpl.php-->>User: display blogPosts
+User->>blogPostModifyController: verification POST
+blogPostModifyController->>blogPostModify.tpl.php:interface form
+blogPostModify.tpl.php->>blogPostModifyController: create post
+blogPostModifyController->>PDO:insert new post
 ```
